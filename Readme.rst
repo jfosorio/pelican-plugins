@@ -3,8 +3,8 @@ Pelican Plugins
 
 Beginning with version 3.0, Pelican supports plugins. Plugins are a way to add
 features to Pelican without having to directly modify the Pelican core. Starting
-with 3.2, all plugins (including the ones previously in the core) are 
-moved here, so this is the central place for all plugins. 
+with 3.2, all plugins (including the ones previously in the core) are
+moved here, so this is the central place for all plugins.
 
 How to use plugins
 ==================
@@ -36,14 +36,16 @@ Plugin descriptions
 ========================  ===========================================================
 Plugin                    Description
 ========================  ===========================================================
+Always modified           Copy created date metadata into modified date for easy "latest updates" indexes
+
 AsciiDoc reader           Use AsciiDoc to write your posts.
 
 Asset management          Use the Webassets module to manage assets such as CSS and JS files.
-                    
+
 Auto Pages                Generate custom content for generated Author, Category, and Tag pages (e.g. author biography)
 
 Better code samples       Wraps all `table` blocks with a class attribute `.codehilitetable` in an additional `div` of class `.hilitewrapper`. It thus permits to style codeblocks better, especially to make them scrollable.
-                    
+
 Better figures/samples    Adds a `style="width: ???px; height: auto;"` attribute to any `<img>` tags in the content
 
 bootstrapify              Automatically add bootstraps default classes to your content, usefull for md generated tables
@@ -54,7 +56,7 @@ Clean summary             Cleans your summary of excess images
 
 Code include              Includes Pygments highlighted code in reStructuredText
 
-Collate content           Makes categories of content available to the template as lists through a `collations` attribute 
+Collate content           Makes categories of content available to the template as lists through a `collations` attribute
 
 Creole reader             Allows you to write your posts using the wikicreole syntax
 
@@ -102,6 +104,8 @@ Libravatar                Allows inclusion of user profile pictures from librava
 
 Liquid-style tags         Allows liquid-style tags to be inserted into markdown within Pelican documents
 
+Load CSV                  Adds ``csv`` Jinja tag to display the contents of a CSV file as an HTML table
+
 Multi parts posts         Allows you to write multi-part posts
 
 Markdown Inline Extend    Enables you to add customize inline patterns to your markdown
@@ -116,6 +120,8 @@ PDF generator             Automatically exports RST articles and pages as PDF fi
 
 Pelican-flickr            Brings your Flickr photos & sets into your static website
 
+pelican_javascript        Allows you to embed Javascript and CSS files into individual articles
+
 pelican-toc               Generates a Table of Contents and make it available to the theme via article.toc
 
 Pelican Gist tag          Easily embed GitHub Gists in your Pelican articles
@@ -123,8 +129,6 @@ Pelican Gist tag          Easily embed GitHub Gists in your Pelican articles
 Pelican Page Order        Adds a ``page_order`` attribute to all pages if one is not defined.
 
 Pelican comment system    Allows you to add static comments to your articles
-
-Pelican TextBundle        Create posts from TextBundles
 
 Pelican Vimeo             Enables you to embed Vimeo videos in your pages and articles
 
@@ -154,11 +158,15 @@ Replacer                  Replace a text of a generated HTML
 
 Representative image      Extracts a representative image (i.e, featured image) from the article's summary or content
 
+RMD Reader                Create posts via knitr RMarkdown files
+
 Share post                Creates share URLs of article
 
 Simple footnotes          Adds footnotes to blog posts
 
 Sitemap                   Generates plain-text or XML sitemaps
+
+Slim                      Render theme template files via Plim, a Python port of Slim, instead of Jinja
 
 Static comments           Allows you to add static comments to an article
 
@@ -180,7 +188,7 @@ W3C validate              Submits generated HTML content to the W3C Markup Valid
 ========================  ===========================================================
 
 
-Please refer to the ``Readme`` file in a plugin's folder for detailed information about 
+Please refer to the ``Readme`` file in a plugin's folder for detailed information about
 that plugin.
 
 Contributing a plugin
