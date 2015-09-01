@@ -141,11 +141,15 @@ init_mathjax = function() {
     if (window.MathJax) {
         // MathJax loaded
         MathJax.Hub.Config({
+            TeX: {
+                extensions: ["AMSmath.js"],
+                equationNumbers: { autoNumber: "AMS", useLabelIds: true}
+                },
             tex2jax: {
                 inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                 displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
             },
-            displayAlign: 'left', // Change this to 'center' to center equations.
+            displayAlign: 'center', // Change this to 'center' to center equations.
             "HTML-CSS": {
                 styles: {'.MathJax_Display': {"margin": 0}}
             }
@@ -301,6 +305,9 @@ def notebook(preprocessor, tag, markup):
             nb_json = IPython.nbformat.reads(nb_text, as_version=4)
 
     (body, resources) = exporter.from_notebook_node(nb_json)
+    
+    #  A ugly workaround <img src="images" do not work in pelican
+    body = body.replace('<img src="image','<img src="/image')
 
     # if we haven't already saved the header, save it here.
     if not notebook.header_saved:
